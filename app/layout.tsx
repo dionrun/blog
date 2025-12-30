@@ -1,15 +1,12 @@
 import "./globals.css";
 
-import { Noto_Sans_KR } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { doge } from "./doge";
 
-const notoSansKr = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const viewport = {
   themeColor: "transparent",
@@ -22,8 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
-      className={`${notoSansKr.className} antialiased`}
+      lang="ko"
+      className={`${inter.className} antialiased`}
       suppressHydrationWarning={true}
     >
       <head>
