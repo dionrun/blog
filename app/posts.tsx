@@ -1,11 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Suspense } from "react";
 import useSWR from "swr";
-
-type SortSetting = ["date" | "views", "desc" | "asc"];
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -34,7 +31,10 @@ function List({ posts }) {
         const lastOfYear = !posts[i + 1] || getYear(posts[i + 1].date) !== year;
 
         return (
-          <li key={post.id} className="group">
+          <li
+            key={post.id}
+            className="group border-b border-neutral-200 dark:border-neutral-700"
+          >
             <Link href={`/${new Date(post.date).getFullYear()}/${post.id}`}>
               <span
                 className={`flex
@@ -54,13 +54,9 @@ function List({ posts }) {
                   )}
 
                   <span className="grow dark:text-gray-100">
-                    <span className="group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700 transition-all rounded-xl py-0.5 px-1.5">
+                    <span className="group-hover:bg-neutral-200 dark:group-hover:bg-neutral-700 transition-all rounded-sm py-0.5 px-1.5">
                       {post.title}
                     </span>
-                  </span>
-
-                  <span className="text-neutral-500 dark:text-neutral-500 text-xs mt-0.5">
-                    {post.viewsFormatted}
                   </span>
                 </span>
               </span>
