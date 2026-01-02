@@ -1,6 +1,4 @@
-import redis from "@/app/redis";
 import postsData from "@/app/posts.json";
-import commaNumber from "comma-number";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -34,27 +32,5 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  if (!redis) {
-    return NextResponse.json({
-      ...post,
-      views: 0,
-      viewsFormatted: "0",
-    });
-  }
-
-  if (url.searchParams.get("incr") != null) {
-    const views = await redis.hincrby("views", id, 1);
-    return NextResponse.json({
-      ...post,
-      views,
-      viewsFormatted: commaNumber(views),
-    });
-  } else {
-    const views = (await redis.hget("views", id)) ?? 0;
-    return NextResponse.json({
-      ...post,
-      views,
-      viewsFormatted: commaNumber(Number(views)),
-    });
-  }
+  return NextResponse.json(post);
 }

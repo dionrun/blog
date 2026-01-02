@@ -5,7 +5,6 @@
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "16.1.1",
-    "@upstash/redis": "^1.20.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "comma-number": "^2.1.0",
@@ -43,8 +42,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "node ./fonts/init.mjs"
+    "start": "next start"
   },
   "prettier": {
     "arrowParens": "avoid"
