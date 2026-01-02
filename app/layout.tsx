@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import { doge } from "./doge";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,14 +22,6 @@ export default function RootLayout({
       className={`${inter.className} antialiased`}
       suppressHydrationWarning={true}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(${doge.toString()})();`,
-          }}
-        />
-      </head>
-
       <body className="dark:text-gray-100 max-w-2xl m-auto">
         <main className="p-6 pt-3 md:pt-6 min-h-screen">
           <Header />
