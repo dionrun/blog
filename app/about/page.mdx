@@ -3,13 +3,15 @@ import Image from "next/image";
 import dionPhoto from "../../public/images/dion.jpg";
 
 export const metadata = {
-  title: "DION | About",
-  description: "김동규(DION)에 대하여",
+  title: "dionrun.com | About",
+  description: "김동규(Dion)에 대하여",
   openGraph: {
-    title: "DION | About",
-    description: "김동규(DION)에 대하여",
-    images: [{ url: "/about/opengraph-image" }],
+    title: "dionrun.com | About",
+    description: "김동규(Dion)에 대하여",
+    url: "https://dionrun.com/about",
+    siteName: "김동규(Dion)에 대하여",
   },
+  metadataBase: new URL("https://dionrun.com/about"),
 };
 
 <Image
