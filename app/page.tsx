@@ -2,15 +2,15 @@ import { Posts } from "./posts";
 import { getPosts } from "./get-posts";
 
 export const metadata = {
-  title: "dionrun.com",
+  title: "dion.run",
   description: "김동규(Dion)의 블로그",
   openGraph: {
-    title: "dionrun.com",
+    title: "dion.run",
     description: "김동규(Dion)의 블로그",
-    url: "https://dionrun.com",
+    url: "https://dion.run",
     siteName: "김동규(Dion)의 블로그",
   },
-  metadataBase: new URL("https://dionrun.com"),
+  metadataBase: new URL("https://dion.run"),
 };
 
 export const revalidate = 300;

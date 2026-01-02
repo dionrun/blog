@@ -5,16 +5,16 @@ export async function GET() {
   const posts = await getPostsWithHtmlContent();
 
   const feed = new RSS({
-    title: "dionrun.com",
-    site_url: "https://dionrun.com",
-    feed_url: "https://dionrun.com/atom",
+    title: "dion.run",
+    site_url: "https://dion.run",
+    feed_url: "https://dion.run/atom",
     description: "김동규(Dion)의 블로그",
   });
 
   posts.forEach(post => {
     feed.item({
       title: post.title,
-      url: `https://dionrun.com/${post.id}`,
+      url: `https://dion.run/${post.id}`,
       date: new Date(post.date),
       description: post.html,
     });

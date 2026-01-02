@@ -1,7 +1,7 @@
 {
-  "name": "dionrun-blog",
+  "name": "dion.run",
   "license": "MIT",
-  "description": "dionrun.com (blog)",
+  "description": "dion.run (blog)",
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "16.1.1",

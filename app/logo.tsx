@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export function Logo() {
   return (
-    <span className="text-md md:text-lg whitespace-nowrap font-bold">
-      <span className="cursor-default pr-2">DION</span>
-    </span>
+    <Link href="/">
+      <span className="text-md md:text-lg whitespace-nowrap font-bold">
+        <span className="pr-2">DION</span>
+      </span>
+    </Link>
   );
 }
