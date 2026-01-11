@@ -23,13 +23,19 @@ export const getPostsWithHtmlContent = async () => {
   const postsWithHtml = await Promise.all(
     posts.map(async post => {
       try {
+        const year = new Date(post.date).getFullYear();
         const { default: MDXContent } = await import(
-          `./(post)/${post.id}/page.mdx`
+          `./(post)/${year}/${post.id}/page.mdx`
         );
         const components = useMDXComponents({});
-        const html = renderToStaticMarkup(
-          createElement(MDXContent, { components })
-        );
+        // @ts-ignore
+        components.img = props => createElement("img", props);
+        // @ts-ignore
+        components.Image = props => createElement("img", props);
+        components.Caption = props => createElement("span", props);
+        const Content = MDXContent as any;
+        const compiled = await Content({ components });
+        const html = renderToStaticMarkup(compiled);
         return { ...post, html };
       } catch (e) {
         return post;
